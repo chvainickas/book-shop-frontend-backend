@@ -1,13 +1,45 @@
-gg# Book Shop
+# Book Shop
 
-A Rails 8.1.1 application for managing a book shop.
+A full-stack book shop application with a decoupled frontend and backend architecture.
 
-## Setup
+## Project Structure
 
-```bash
-bundle install
-rails db:setup
-rails server
+```
+├── backend/    # Rails API application
+├── frontend/   # React application
 ```
 
-Visit http://localhost:3000
+## Backend (Rails)
+
+Rails API serving book catalog, user authentication, shopping cart, orders, and wishlist functionality.
+
+### Setup
+
+```bash
+cd backend
+bundle install
+rails db:setup
+rails server -p 3001
+```
+
+## Frontend (React)
+
+React application providing the user interface for browsing books, managing cart, and placing orders.
+
+### Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+## Quick Start
+
+```bash
+# Start both services
+./start_dev.sh
+```
+
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:3001

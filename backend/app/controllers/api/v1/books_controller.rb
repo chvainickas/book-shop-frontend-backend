@@ -87,7 +87,7 @@ module Api
       end
 
       def book_params
-        params.require(:book).permit(:title, :author, :price, :stock, :description, :image, :category_id)
+        params.require(:book).permit(:title, :author, :price, :stock, :description, :image, :category_id, :cover_url)
       end
 
       def book_json(book)
@@ -99,7 +99,7 @@ module Api
           stock: book.stock,
           description: book.description,
           category: book.category ? { id: book.category.id, name: book.category.name } : nil,
-          image_url: book.image.attached? ? url_for(book.image) : nil,
+          image_url: book.image.attached? ? url_for(book.image) : book.cover_url,
           created_at: book.created_at,
           updated_at: book.updated_at
         }

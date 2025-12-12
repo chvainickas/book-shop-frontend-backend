@@ -6,21 +6,21 @@ Category.destroy_all
 # Create admin user
 puts "Creating admin user..."
 admin = User.find_or_create_by(email: 'admin@bookshop.com') do |user|
+  user.name = 'Admin'
   user.password = 'admin123'
   user.password_confirmation = 'admin123'
   user.admin = true
 end
-Cart.create(user: admin) unless admin.cart
 puts "Admin user created: #{admin.email} (password: admin123)"
 
 # Create regular user
 puts "Creating regular user..."
 regular_user = User.find_or_create_by(email: 'user@bookshop.com') do |user|
+  user.name = 'User'
   user.password = 'user123'
   user.password_confirmation = 'user123'
   user.admin = false
 end
-Cart.create(user: regular_user) unless regular_user.cart
 puts "Regular user created: #{regular_user.email} (password: user123)"
 
 # Create categories

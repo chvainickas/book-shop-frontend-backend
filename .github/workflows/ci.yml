@@ -9,6 +9,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
 
     steps:
       - name: Checkout code
@@ -19,6 +22,7 @@ jobs:
         with:
           ruby-version: '3.4.6'
           bundler-cache: true
+          working-directory: backend
 
       - name: Install dependencies
         run: |

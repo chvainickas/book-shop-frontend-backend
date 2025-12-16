@@ -2,7 +2,7 @@ require "test_helper"
 
 class BookTest < ActiveSupport::TestCase
   def setup
-    @category = Category.create!(name: "Fiction")
+    @category = Category.create!(name: "Book Test Category")
     @book = Book.new(
       title: "Test Book",
       author: "Test Author",

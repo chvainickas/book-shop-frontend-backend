@@ -1,1 +1,6 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# cart item fixtures for testing
+
+customer_cart_item:
+  cart: customer_cart
+  book: in_stock_book
+  quantity: 2

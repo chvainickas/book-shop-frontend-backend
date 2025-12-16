@@ -1,1 +1,25 @@
-# Book fixtures
+# book fixtures for testing
+
+in_stock_book:
+  title: Test Book One
+  author: Test Author
+  price: 19.99
+  stock: 10
+  description: A test book that is in stock
+  category: fiction
+
+out_of_stock_book:
+  title: Out of Stock Book
+  author: Another Author
+  price: 29.99
+  stock: 0
+  description: A test book that is out of stock
+  category: non_fiction
+
+expensive_book:
+  title: Expensive Book
+  author: Famous Author
+  price: 99.99
+  stock: 5
+  description: An expensive test book
+  category: science

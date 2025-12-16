@@ -13,3 +13,20 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
+
+# helper module for integration tests that need jwt authentication
+module AuthenticationHelper
+  # generate jwt token for a user
+  def token_for(user)
+    JsonWebToken.encode(user_id: user.id)
+  end
+
+  # return authorization header hash for a user
+  def auth_headers(user)
+    { "Authorization" => "Bearer #{token_for(user)}" }
+  end
+end
+
+class ActionDispatch::IntegrationTest
+  include AuthenticationHelper
+end

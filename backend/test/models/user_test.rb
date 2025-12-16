@@ -3,7 +3,8 @@ require "test_helper"
 class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(
-      email: "test@example.com",
+      name: "Test User",
+      email: "testmodel@example.com",
       password: "password123",
       password_confirmation: "password123"
     )
@@ -12,6 +13,12 @@ class UserTest < ActiveSupport::TestCase
   # Validation Tests
   test "should be valid with valid attributes" do
     assert @user.valid?
+  end
+
+  test "should require name" do
+    @user.name = nil
+    assert_not @user.valid?
+    assert_includes @user.errors[:name], "can't be blank"
   end
 
   test "should require email" do
@@ -23,7 +30,8 @@ class UserTest < ActiveSupport::TestCase
   test "should require unique email" do
     @user.save!
     duplicate_user = User.new(
-      email: "test@example.com",
+      name: "Another User",
+      email: "testmodel@example.com",
       password: "password123",
       password_confirmation: "password123"
     )
@@ -48,9 +56,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should save email in lowercase" do
-    @user.email = "TEST@EXAMPLE.COM"
+    @user.email = "TESTMODEL@EXAMPLE.COM"
     @user.save!
-    assert_equal "test@example.com", @user.reload.email
+    assert_equal "testmodel@example.com", @user.reload.email
   end
 
   test "should require minimum password length" do
@@ -113,15 +121,8 @@ class UserTest < ActiveSupport::TestCase
 
   test "destroying user should destroy associated wishlist_items" do
     @user.save!
-    category = Category.create!(name: "Fiction")
-    book = Book.create!(
-      title: "Test",
-      author: "Author",
-      price: 10,
-      stock: 5,
-      description: "Test",
-      category: category
-    )
+    # use fixture book instead of creating one
+    book = books(:in_stock_book)
     WishlistItem.create!(user: @user, book: book)
 
     assert_difference "WishlistItem.count", -1 do

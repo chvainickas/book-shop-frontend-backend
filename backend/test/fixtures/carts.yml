@@ -1,1 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# cart fixtures for testing
+
+admin_cart:
+  user: admin
+
+customer_cart:
+  user: customer

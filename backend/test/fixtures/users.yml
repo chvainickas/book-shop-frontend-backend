@@ -1,1 +1,13 @@
-# User fixtures
+# user fixtures for testing
+
+admin:
+  name: Admin User
+  email: admin@test.com
+  password_digest: <%= BCrypt::Password.create('password123') %>
+  admin: true
+
+customer:
+  name: Test Customer
+  email: customer@test.com
+  password_digest: <%= BCrypt::Password.create('password123') %>
+  admin: false

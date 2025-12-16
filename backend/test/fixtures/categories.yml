@@ -1,1 +1,10 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# category fixtures for testing
+
+fiction:
+  name: Fiction
+
+non_fiction:
+  name: Non-Fiction
+
+science:
+  name: Science

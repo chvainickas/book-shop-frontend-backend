@@ -27,6 +27,12 @@ class ApplicationController < ActionController::API
     header = request.headers['Authorization']
     header = header.split(' ').last if header
 
+    # return 401 if no token provided
+    unless header
+      render json: { error: 'Unauthorized' }, status: :unauthorized
+      return
+    end
+
     begin
       decoded = JsonWebToken.decode(header)
       @current_user = User.find(decoded[:user_id]) if decoded

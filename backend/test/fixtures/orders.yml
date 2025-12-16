@@ -1,1 +1,6 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# order fixtures for testing
+
+customer_order:
+  user: customer
+  status: pending
+  total: 39.98

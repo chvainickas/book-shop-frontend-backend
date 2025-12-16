@@ -1,1 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# order item fixtures for testing
+
+customer_order_item:
+  order: customer_order
+  book: in_stock_book
+  quantity: 2
+  price: 19.99

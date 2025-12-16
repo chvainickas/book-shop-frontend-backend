@@ -1,1 +1,5 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# wishlist item fixtures for testing
+
+customer_wishlist_item:
+  user: customer
+  book: expensive_book

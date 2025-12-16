@@ -2,7 +2,7 @@ require "test_helper"
 
 class CategoryTest < ActiveSupport::TestCase
   def setup
-    @category = Category.new(name: "Fiction")
+    @category = Category.new(name: "Test Category Unique")
   end
 
   # Validation Tests
@@ -18,7 +18,7 @@ class CategoryTest < ActiveSupport::TestCase
 
   test "should require unique name" do
     @category.save!
-    duplicate_category = Category.new(name: "Fiction")
+    duplicate_category = Category.new(name: "Test Category Unique")
     assert_not duplicate_category.valid?
     assert_includes duplicate_category.errors[:name], "has already been taken"
   end
@@ -31,7 +31,7 @@ class CategoryTest < ActiveSupport::TestCase
   test "destroying category should nullify books category_id" do
     @category.save!
     book = Book.create!(
-      title: "Test Book",
+      title: "Test Book For Category",
       author: "Test Author",
       price: 19.99,
       stock: 10,

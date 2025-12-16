@@ -1,4 +1,5 @@
 // frontend/src/pages/Books.js
+// main book listing page - displays all books with filtering, search and pagination
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Row, Col, Card, Button, Form, Alert, Spinner, Pagination } from 'react-bootstrap';

@@ -1,4 +1,5 @@
 // frontend/src/pages/Orders.js
+// order history page - displays list of all user orders with status
 
 import React, { useState, useEffect } from 'react';
 import { Container, Table, Badge, Alert, Spinner, Card } from 'react-bootstrap';

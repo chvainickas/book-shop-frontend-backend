@@ -1,4 +1,5 @@
 // frontend/src/pages/OrderDetails.js
+// single order detail page - shows full order info with all items purchased
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Card, Table, Badge, Alert, Spinner, Row, Col } from 'react-bootstrap';

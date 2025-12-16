@@ -1,9 +1,12 @@
 // frontend/src/services/api.js
+// api service - handles all http requests to the rails backend
 
 import axios from 'axios';
 
+// base url defaults to localhost for development, overridden by env var in production
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api/v1';
 
+// create axios instance with default configuration
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {

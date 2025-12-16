@@ -1,4 +1,5 @@
 // frontend/src/pages/Cart.js
+// shopping cart page - displays cart items with quantity controls and checkout
 
 import React, { useState, useEffect } from 'react';
 import { Container, Table, Button, Alert, Spinner, Form, Card } from 'react-bootstrap';

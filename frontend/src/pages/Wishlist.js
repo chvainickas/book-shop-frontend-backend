@@ -1,4 +1,5 @@
 // frontend/src/pages/Wishlist.js
+// wishlist page - displays saved books that user wants to purchase later
 
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button, Alert, Spinner } from 'react-bootstrap';

@@ -1,10 +1,12 @@
 // frontend/src/pages/BookForm.js
+// admin book form - handles both creating new books and editing existing ones
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Form, Button, Alert, Card, Spinner } from 'react-bootstrap';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { booksAPI, categoriesAPI } from '../services/api';
 
+// form component for creating/editing books - admin only
 const BookForm = () => {
   const { id } = useParams();
   const navigate = useNavigate();

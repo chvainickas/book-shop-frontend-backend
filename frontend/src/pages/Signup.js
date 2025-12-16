@@ -1,10 +1,12 @@
 // frontend/src/pages/Signup.js
+// signup page - handles new user registration
 
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
+// registration form component - creates account and logs in user
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: '',

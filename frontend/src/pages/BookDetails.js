@@ -1,4 +1,5 @@
 // frontend/src/pages/BookDetails.js
+// single book detail page - shows full book info with add to cart/wishlist options
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Container, Row, Col, Card, Button, Form, Alert, Spinner } from 'react-bootstrap';

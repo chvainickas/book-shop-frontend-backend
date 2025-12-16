@@ -1,10 +1,12 @@
 // frontend/src/pages/Login.js
+// login page - handles user authentication with email and password
 
 import React, { useState } from 'react';
 import { Container, Form, Button, Alert, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
+// login form component - redirects to homepage on successful login
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
